@@ -1,0 +1,67 @@
+# Create a styled HTML version of the Web Dev syllabus content
+html_styled = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Development Syllabus</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #1e88e5;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #1565c0;
+            border-left: 5px solid #1e88e5;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        ul {
+            margin-top: 10px;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Development Syllabus</h1>
+"""
+
+# Append each section with stylized headers and list items
+for title, points in sections:
+    html_styled += f"<h2>{title}</h2>\n<ul>\n"
+    for point in points:
+        html_styled += f"<li>{point}</li>\n"
+    html_styled += "</ul>\n"
+
+html_styled += """
+    </div>
+</body>
+</html>
+"""
+
+# Save to HTML file
+styled_html_path = "/mnt/data/Web_Dev_Syllabus_Styled.html"
+with open(styled_html_path, "w", encoding="utf-8") as file:
+    file.write(html_styled)
+
+styled_html_path
