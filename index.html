@@ -1,5 +1,4 @@
-# Create a styled HTML version of the Web Dev syllabus content
-html_styled = """
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,24 +43,104 @@ html_styled = """
 <body>
     <div class="container">
         <h1>Web Development Syllabus</h1>
-"""
+<h2>Web Development Fundamentals</h2>
+<ul>
+<li>Understand how websites work and how HTML, CSS and JavaScript contribute.</li>
+<li>Understand how the internet works and how websites are served.</li>
+<li>Learn to use git, GitHub and version control.</li>
+<li>Learn key troubleshooting and debugging skills to apply to your projects.</li>
+</ul>
+<h2>HTML 5</h2>
+<ul>
+<li>Learn the anatomy of HTML syntax to structure your websites.</li>
+<li>Understand the HTML boilerplate and HTML doctypes.</li>
+<li>Understand indentation and nesting in HTML code.</li>
+<li>Use HTML tags for headings and paragraphs.</li>
+<li>Structure unordered and ordered lists.</li>
+<li>Insert images and create hyperlinks.</li>
+<li>Create multi-page websites.</li>
+<li>Learn HTML best practices.</li>
+</ul>
+<h2>CSS 3</h2>
+<ul>
+<li>Understand cascading style sheets (CSS) and how to style your site.</li>
+<li>Use selectors, properties, and understand inline, internal, and external CSS.</li>
+<li>Understand specificity, inheritance, and the CSS Box Model.</li>
+<li>Use developer tools for CSS debugging.</li>
+<li>Apply positioning, display, font styling, and media queries.</li>
+</ul>
+<h2>Flexbox</h2>
+<ul>
+<li>Learn why Flexbox was introduced and how it works.</li>
+<li>Use flex direction, align, justify, and flex shorthand properties.</li>
+</ul>
+<h2>Grid</h2>
+<ul>
+<li>Learn how CSS Grid differs from Flexbox.</li>
+<li>Create and arrange grids and combine Grid with Flexbox.</li>
+</ul>
+<h2>Web Design</h2>
+<ul>
+<li>Learn web design principles, UI/UX basics, color theory, and typography.</li>
+<li>Apply attention management principles for better UX.</li>
+</ul>
+<h2>JavaScript ES6</h2>
+<ul>
+<li>Understand syntax, data types, operators, control structures, functions, arrays, and objects.</li>
+<li>Work with higher-order functions, array/object methods, OOP concepts.</li>
+<li>Use modern ES6 features like arrow functions, spread/rest operators, and destructuring.</li>
+</ul>
+<h2>DOM</h2>
+<ul>
+<li>Learn HTML tree structure, DOM traversal, and manipulation using JavaScript.</li>
+</ul>
+<h2>Bootstrap</h2>
+<ul>
+<li>Understand native CSS vs. external frameworks.</li>
+<li>Use Bootstrap grid, components, icons, and templates.</li>
+</ul>
+<h2>Version Control</h2>
+<ul>
+<li>Use Git and GitHub for version control, branching, rolling back changes.</li>
+</ul>
+<h2>Unix Command Line</h2>
+<ul>
+<li>Use basic bash commands to manage files and folders.</li>
+</ul>
+<h2>Node.js</h2>
+<ul>
+<li>Learn back-end JavaScript development, Node basics, NPM, events, and file system.</li>
+</ul>
+<h2>Express.js</h2>
+<ul>
+<li>Install and use Express, RESTful routing, middleware.</li>
+</ul>
+<h2>EJS</h2>
+<ul>
+<li>Use EJS templating with Node/Express, pass data, and structure layouts.</li>
+</ul>
+<h2>APIs</h2>
+<ul>
+<li>Understand APIs, HTTP, authentication, and JSON data transmission.</li>
+</ul>
+<h2>Databases</h2>
+<ul>
+<li>Understand SQL, CRUD operations, Joins, and schema design.</li>
+<li>Work with PostgreSQL and MongoDB, ER models and ORM concepts.</li>
+</ul>
+<h2>Authentication & Security</h2>
+<ul>
+<li>Understand encryption, hashing, sessions, and OAuth 2.0 for secure user auth.</li>
+</ul>
+<h2>React.js</h2>
+<ul>
+<li>Learn React components, JSX, props, state, hooks, and conditional rendering.</li>
+</ul>
+<h2>Web3 & Blockchain</h2>
+<ul>
+<li>Understand tokens, NFTs, wallets, and deploy projects on the Internet Computer using blockchain.</li>
+</ul>
 
-# Append each section with stylized headers and list items
-for title, points in sections:
-    html_styled += f"<h2>{title}</h2>\n<ul>\n"
-    for point in points:
-        html_styled += f"<li>{point}</li>\n"
-    html_styled += "</ul>\n"
-
-html_styled += """
     </div>
 </body>
 </html>
-"""
-
-# Save to HTML file
-styled_html_path = "/mnt/data/Web_Dev_Syllabus_Styled.html"
-with open(styled_html_path, "w", encoding="utf-8") as file:
-    file.write(html_styled)
-
-styled_html_path
