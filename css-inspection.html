@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Inspection Quiz</title>
+  <style>
+    body {
+      background-color: aliceblue;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: royalblue;
+      font-size: 3rem;
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-weight: 500;
+    }
+
+    .quiz {
+      margin: 20px auto;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .question {
+      font-size: 18px;
+      margin: 20px 0 5px;
+    }
+
+    .answer {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 60%;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 5px 10px;
+    }
+
+    #result {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Inspect Me</h1>
+  <h2>This is a simple website to learn CSS inspection</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.
+    Suspendisse potenti. Morbi commodo, ipsum in blandit hendrerit, velit enim ornare nisi, eget consequat libero libero eu
+    libero.
+  </p>
+  <hr />
+  <div class="quiz" id="quiz">
+    <div class="question">Q1. What is the named color of the body?</div>
+    <div class="answer"><input type="text" data-id="1"><button onclick="checkAnswer(1)">Submit</button><p id="result1"></p></div>
+
+    <div class="question">Q2. What is the font size of the h1?</div>
+    <div class="answer"><input type="text" data-id="2"><button onclick="checkAnswer(2)">Submit</button><p id="result2"></p></div>
+
+    <div class="question">Q3. What is the font weight of the h2?</div>
+    <div class="answer"><input type="text" data-id="3"><button onclick="checkAnswer(3)">Submit</button><p id="result3"></p></div>
+
+    <div class="question">Q4. What is the font family of the p?</div>
+    <div class="answer"><input type="text" data-id="4"><button onclick="checkAnswer(4)">Submit</button><p id="result4"></p></div>
+
+    <div class="question">Q5. What is the text alignment of the body?</div>
+    <div class="answer"><input type="text" data-id="5"><button onclick="checkAnswer(5)">Submit</button><p id="result5"></p></div>
+
+    <div class="question">Q6. What is the font family used in h1?</div>
+    <div class="answer"><input type="text" data-id="6"><button onclick="checkAnswer(6)">Submit</button><p id="result6"></p></div>
+
+    <div class="question">Q7. What is the font weight of the paragraph?</div>
+    <div class="answer"><input type="text" data-id="7"><button onclick="checkAnswer(7)">Submit</button><p id="result7"></p></div>
+
+    <div class="question">Q8. What is the font size of the .question class?</div>
+    <div class="answer"><input type="text" data-id="8"><button onclick="checkAnswer(8)">Submit</button><p id="result8"></p></div>
+
+    <div class="question">Q9. What is the margin of the .quiz class?</div>
+    <div class="answer"><input type="text" data-id="9"><button onclick="checkAnswer(9)">Submit</button><p id="result9"></p></div>
+
+    <div class="question">Q10. What is the text alignment of the .question class?</div>
+    <div class="answer"><input type="text" data-id="10"><button onclick="checkAnswer(10)">Submit</button><p id="result10"></p></div>
+  </div>
+
+  <script>
+    const answers = {
+      1: ["aliceblue", "alice blue"],
+      2: ["3rem", "3 rem"],
+      3: ["500"],
+      4: ["arial", "arial, sans-serif", "sans-serif", "sans serif"],
+      5: ["center"],
+      6: ["times new roman", "'times new roman'", "'times new roman', sans-serif"],
+      7: ["normal", "400"],
+      8: ["18px", "18 px"],
+      9: ["20px", "20 px"],
+      10: ["left"]
+    };
+
+    function checkAnswer(id) {
+      const input = document.querySelector(`input[data-id="${id}"]`).value.trim().toLowerCase();
+      const resultEl = document.getElementById("result" + id);
+
+      if (answers[id].includes(input)) {
+        resultEl.innerText = "Correct!";
+        resultEl.style.color = "green";
+      } else {
+        resultEl.innerText = "Incorrect. Try again.";
+        resultEl.style.color = "red";
+      }
+    }
+  </script>
+</body>
+
+</html>
